@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AirData Ontology - Modelo Semantico para Operacoes de Aviacao">
+  <title>AirData Ontology</title>
+
+<!-- Index Page Styles -->
+<style>
+  /* Intro Section */
+  .intro {
+    background-color: #ffffff;
+    padding: 48px 20px;
+    border-bottom: 1px solid #e1e4e8;
+  }
+
+  .intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .intro-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #24292e;
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Cards Section */
+  .cards-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 1.75rem;
+    color: #24292e;
+    margin: 0 0 12px 0;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: #586069;
+    margin: 0 0 40px 0;
+    font-size: 1.05rem;
+  }
+
+  .cards-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: #f6f8fa;
+    border-radius: 8px;
+    padding: 28px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border: 1px solid #e1e4e8;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    border-color: #003C7D;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+    color: #003C7D;
+    margin: 0 0 12px 0;
+  }
+
+  .card p {
+    color: #586069;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+
+<!-- AirData Footer Style Start -->
+<style>
+/* Footer Styles */
+.footer {
+  background-color: #f6f8fa;
+  border-top: 1px solid #d1d5da;
+  padding-top: 32px;
+  margin-top: 60px;
+  text-align: center;
+  color: #586069;
+  padding-bottom: 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 32px;
+}
+
+.footer-org {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #003C7D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background-color: #003C7D;
+  width: 100%;
+}
+</style>
+<!-- AirData Footer Style End -->
+
+</head>
+
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo (WebVOWL)</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="quality_report.html" class="dropdown-item">Relat&oacute;rio de Qualidade</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="development.html" class="nav-link">Desenvolvimento</a>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- Intro Section -->
+<section class="intro">
+  <div class="intro-content">
+    <p class="intro-description">
+      O projeto Artificial Intelligence for Aviation Data Analysis (AirData) envolve o desenvolvimento
+      de um sistema de armazenamento e análise de dados para o setor de aviação brasileiro, focado na
+      aviação civil, fundamentado em técnicas de Inteligência Artificial (IA).
+    </p>
+    <p class="intro-description" style="margin-top: 16px;">
+      Uma das partes integrantes do projeto é o desenvolvimento de uma ontologia formal para o setor.
+      A ontologia funciona como uma base de conhecimento estruturada que permite aos modelos de linguagem
+      (LLMs) compreender com precisão os conceitos, relações e regras do domínio aeronáutico. Ao integrar
+      essa estrutura semântica, os modelos podem fornecer respostas mais precisas, contextualizadas e
+      alinhadas com a terminologia técnica da aviação civil brasileira.
+    </p>
+    <p class="intro-description" style="margin-top: 16px;">
+      Este portal apresenta o status atual de desenvolvimento da ontologia AirData.
+    </p>
+  </div>
+</section>
+
+<!-- Cards Section -->
+<section class="cards-section">
+  <h2 class="section-title">Recursos da Ontologia</h2>
+  <p class="section-subtitle">Acesse rapidamente os principais recursos do projeto</p>
+
+  <div class="cards-container">
+    <a href="docs/index-pt.html" class="card">
+      <div class="card-icon">&#128214;</div>
+      <h3>Documentação Completa</h3>
+      <p>Explore a documentação detalhada da ontologia, incluindo classes, propriedades e axiomas definidos no modelo semântico.</p>
+    </a>
+
+    <a href="docs/webvowl/index.html" class="card">
+      <div class="card-icon">&#127760;</div>
+      <h3>Visualização Interativa</h3>
+      <p>Navegue pela ontologia de forma visual e interativa através do WebVOWL, facilitando a compreensão das relações entre conceitos.</p>
+    </a>
+
+    <a href="changelog.html" class="card">
+      <div class="card-icon">&#128197;</div>
+      <h3>Histórico de Mudanças</h3>
+      <p>Acompanhe a evolução da ontologia com o registro de todas as alterações, adições e remoções entre versões.</p>
+    </a>
+
+    <a href="statistics.html" class="card">
+      <div class="card-icon">&#128202;</div>
+      <h3>Estatísticas</h3>
+      <p>Visualize métricas e estatísticas sobre a ontologia, incluindo número de classes, propriedades e cobertura do domínio.</p>
+    </a>
+
+    <a href="versions.html" class="card">
+      <div class="card-icon">&#128230;</div>
+      <h3>Versões OWL</h3>
+      <p>Acesse todas as versões publicadas da ontologia em formato OWL para download e integração em seus projetos.</p>
+    </a>
+
+    <a href="development.html" class="card">
+      <div class="card-icon">&#128736;</div>
+      <h3>Guia de Desenvolvimento</h3>
+      <p>Encontre orientações para contribuidores, padrões de qualidade e referências técnicas para o desenvolvimento da ontologia.</p>
+    </a>
+  </div>
+</section>
+
+<!-- AirData Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-org"><strong>Instituto Tecnológico de Aeronáutica - ITA</strong></p>
+        <div class="footer-links">
+            <a href="https://www.airdata.ita.br" target="_blank">Portal AirData</a>
+            <a href="https://github.com/ita-airdata/OntoSite" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copyright">
+            © 2026 Projeto AirData - Todos os direitos reservados
+        </p>
+    </div>
+    <div class="footer-bottom-bar"></div>
+</footer>
+<!-- AirData Footer End -->
+
+</body>
+
+</html>

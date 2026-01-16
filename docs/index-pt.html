@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<link href="resources/primer.css" media="screen" rel="stylesheet"/>
+<link href="resources/rec.css" media="screen" rel="stylesheet"/>
+<link href="resources/extra.css" media="screen" rel="stylesheet"/>
+<link href="resources/owl.css" media="screen" rel="stylesheet"/>
+<link href="resources/dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet"/>
+<link href="resources/light.css" media="(prefers-color-scheme: light)" rel="stylesheet"/>
+<link href="resources/slider.css" media="screen" rel="stylesheet"/>
+<meta content="dark light" name="color-scheme"/>
+<script src="resources/dark-mode-toggle.mjs" type="module"></script><div class="darkmode">
+<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+<title>Ontologia AirData - Aeroporto</title>
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://airdata.org/ontology#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://airdata.org/ontology#","name":"Ontologia AirData - Aeroporto", "headline":"Document describing the ontology http://airdata.org/ontology#", "dateReleased":"Fri Jan 16 17:06:58 BRT 2026", "dateModified":"2026-01-16", "version":"0.2.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"AirData Team"}]}</script>
+<script src="resources/jquery.js"></script>
+<script src="resources/marked.min.js"></script>
+<script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Tabela de conte&uacute;dos</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script>
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+
+<!-- AirData Footer Style Start -->
+<style>
+/* Footer Styles */
+.footer {
+  background-color: #f6f8fa;
+  border-top: 1px solid #d1d5da;
+  padding-top: 32px;
+  margin-top: 60px;
+  text-align: center;
+  color: #586069;
+  padding-bottom: 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 32px;
+}
+
+.footer-org {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #003C7D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background-color: #003C7D;
+  width: 100%;
+}
+</style>
+<!-- AirData Footer Style End -->
+
+</head>
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="../index.html" class="logo-container">
+    <img src="../airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="../index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="../docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="../docs/webvowl/index.html" class="dropdown-item">Grafo (WebVOWL)</a>
+        <a href="../statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="../changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="../versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="../quality_report.html" class="dropdown-item">Relat&oacute;rio de Qualidade</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="../development.html" class="nav-link">Desenvolvimento</a>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-pt.html"><b>pt</b></a> </div>
+<h1>Ontologia AirData - Aeroporto</h1>
+<dl>
+<dt>Data modificada: 2026-01-16</dt>
+<dt>Versão:</dt>
+<dd><span class="iri-text">http://airdata.org/ontology/0.2.0</span></dd>
+<dt>Revisão:</dt>
+<dd>0.2.0</dd>
+<dt>Emitida em:</dt>
+<dd>2026-01-16</dd>
+<dt>Autores:</dt>
+<dd>AirData Team</dd>
+<dt>Editor:</dt>
+<dd>AirData</dd>
+<dt>Descargar serializacion:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img alt="JSON-LD" src="https://img.shields.io/badge/Format-JSON_LD-blue.svg"/></a> </span><span><a href="ontology.owl" target="_blank"><img alt="RDF/XML" src="https://img.shields.io/badge/Format-RDF/XML-blue.svg"/></a> </span><span><a href="ontology.nt" target="_blank"><img alt="N-Triples" src="https://img.shields.io/badge/Format-N_Triples-blue.svg"/></a> </span><span><a href="ontology.ttl" target="_blank"><img alt="TTL" src="https://img.shields.io/badge/Format-TTL-blue.svg"/></a> </span></dd><dt>Licença:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img alt="https://creativecommons.org/licenses/by/4.0/" src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg"/></a>
+</dd><dt>Display:</dt><dd><a href="webvowl/index.html#" target="_blank"><img alt="Visualize with WebVowl" src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg"/></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite como:</dt>
+<dd>AirData Team. Ontologia AirData - Aeroporto. Revision: 0.2.0. Retrieved from: http://airdata.org/ontology/0.2.0</dd>
+</dl>
+<a href="provenance/provenance-pt.html" target="_blank">História desta página</a><hr/>
+</div>
+ <div id="abstract"><h2>Sumário</h2><span class="markdown">
+Aqui vai o resumo. Um par de frases que resumem a ontologia e sua finalidade.</span>
+</div>
+<div id="toc"></div>
+<!--INTRODUCTION SECTION-->
+<div id="introduction"><h2 class="list" id="intro">Introdução <span class="backlink"> de volta a <a href="#toc">índice</a></span></h2>
+<span class="markdown">Isso deve falar um pouco sobre sua ontologia, a sua motivação, soa e objetivos.</span>
+</div>
+<!--OVERVIEW SECTION-->
+<div id="overview"><h2 class="list" id="overv">Ontologia AirData - Aeroporto: Visão geral <span class="backlink"> de volta a <a href="#toc">índice</a></span></h2>
+<span class="markdown">Visão geral da ontologia vai aqui: algumas frases explicando os principais conceitos da ontologia</span>
+<h4>Classes</h4>
+<ul class="hlist" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<li>
+<a href="#Aeroporto" title="http://airdata.org/ontology#Aeroporto">Aeroporto</a>
+</li>
+<li>
+<a href="#DetalheInformacao" title="http://airdata.org/ontology#DetalheInformacao">Detalhe de informacao</a>
+</li>
+</ul>
+</div>
+<!--DESCRIPTION SECTION-->
+<div id="description"><h2 class="list" id="desc">Ontologia AirData - Aeroporto: Descrição <span class="backlink"> de volta a <a href="#toc">índice</a></span></h2>
+<span class="markdown">Arquivo inicial com a classe Aeroporto.</span></div>
+<!--CROSSREF SECTION-->
+<div id="crossref"><h2 class="list" id="crossreference">Termos de Ontologia AirData - Aeroporto classes, propriedades e propriedades de dados <span class="backlink"> de volta a <a href="#toc">índice</a></span></h2>
+Esta seção fornece detalhes sobre cada classe e propriedade definida por  Ontologia AirData - Aeroporto.
+<div id="classes" xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<h3 class="list" id="classes-headline">Classes</h3>
+<ul class="hlist">
+<li><a href="#Aeroporto" title="http://airdata.org/ontology#Aeroporto">Aeroporto</a></li>
+<li><a href="#DetalheInformacao" title="http://airdata.org/ontology#DetalheInformacao">Detalhe de informacao</a></li>
+</ul>
+<div class="entity" id="Aeroporto">
+<h3>Aeroporto<sup class="type-c" title="classe">c</sup> <span class="backlink"> de volta a <a href="#toc">índice</a> ou <a href="#classes">Índice do classes</a> </span></h3>
+<p><strong>IRI:</strong> http://airdata.org/ontology#Aeroporto</p>
+<div class="comment">
+<span class="markdown">Aeroporto ou aerodromo usado para operacoes de voo.</span>
+</div>
+<div class="comment">
+<span class="markdown">Classe inicial para representar aeroportos.</span>
+</div>
+<div class="comment">
+<span class="markdown">Airport or aerodrome used for flight operations.</span>
+</div>
+<dl class="description">
+<dt>
+    tem super classes
+   </dt>
+<dd>
+<a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="classe">c</sup>
+</dd>
+</dl>
+</div>
+<div class="entity" id="DetalheInformacao">
+<h3>Detalhe de informacao<sup class="type-c" title="classe">c</sup> <span class="backlink"> de volta a <a href="#toc">índice</a> ou <a href="#classes">Índice do classes</a> </span></h3>
+<p><strong>IRI:</strong> http://airdata.org/ontology#DetalheInformacao</p>
+<div class="comment">
+<span class="markdown">Detalhe de informacao que descreve atributos e contexto de um dado.</span>
+</div>
+<div class="comment">
+<span class="markdown">Classe inicial para representar detalhes de informacao.</span>
+</div>
+<div class="comment">
+<span class="markdown">Information detail that describes data attributes and context.</span>
+</div>
+<dl class="description">
+<dt>
+    tem super classes
+   </dt>
+<dd>
+<a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="classe">c</sup>
+</dd>
+</dl>
+</div>
+</div><div id="legend">
+<h2>lenda <span class="backlink"> de volta a <a href="#toc">ToC</a></span></h2>
+<div class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+</div>
+</div>
+</div>
+<!--REFERENCES SECTION-->
+<div id="references">
+<h2 class="list" id="ref">Referências <span class="backlink"> de volta a <a href="#toc">índice</a></span></h2>
+<span class="markdown">Adicione suas referências aqui. Recomenda-se a tê-los como uma lista.</span>
+</div>
+<div id="acknowledgments">
+<h2 class="list" id="ack">Agradecimentos <span class="backlink"> de volta a <a href="#toc">índice</a></span></h2>
+<p>Os autores gostariam de agradecer a <a href="http://www.essepuntato.it/">Silvio Peroni</a> para o desenvolvimento de <a href="http://www.essepuntato.it/lode">LODE</a>, documentação ambiente para OWL que é usada para gerar a descrição de ontologias termos aqui descritos; e <a href="http://purl.org/net/dgarijo">Daniel Garijo</a> para o desenvolvimento de <a href="https://github.com/dgarijo/Widoco">Widoco</a>, o programa usado para criar o modelo de documento utilizado nesta documentação.</p>
+</div>
+</div>
+
+<!-- AirData Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-org"><strong>Instituto Tecnológico de Aeronáutica - ITA</strong></p>
+        <div class="footer-links">
+            <a href="https://www.airdata.ita.br" target="_blank">Portal AirData</a>
+            <a href="https://github.com/ita-airdata/OntoSite" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copyright">
+            © 2026 Projeto AirData - Todos os direitos reservados
+        </p>
+    </div>
+    <div class="footer-bottom-bar"></div>
+</footer>
+<!-- AirData Footer End -->
+
+</body>
+</html>

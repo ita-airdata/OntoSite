@@ -1,0 +1,146 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "pt", "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://airdata.org/ontology", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "pt" : "Ontologia AirData - Aeroporto",
+      "en" : "AirData Ontology - Airport"
+    },
+    "iri" : "http://airdata.org/ontology#",
+    "version" : "0.2.0",
+    "author" : [ "AirData Team" ],
+    "description" : {
+      "pt" : "Ontologia inicial para o projeto AirData com a classe Aeroporto.",
+      "en" : "Initial ontology for the AirData project with the Aeroporto class."
+    },
+    "comments" : {
+      "pt" : "Arquivo inicial com a classe Aeroporto.",
+      "en" : "Initial file with the Aeroporto class."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "AirData Team",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2026-01-16",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "en",
+        "value" : "AirData",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "0.2.0",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2026-01-16",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "pt",
+        "value" : "Ontologia AirData - Aeroporto",
+        "type" : "label"
+      }, {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "AirData Ontology - Airport",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://airdata.org/ontology#Aeroporto",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "annotations" : {
+      "IAO_0000115" : [ {
+        "identifier" : "IAO_0000115",
+        "language" : "pt",
+        "value" : "Aeroporto ou aerodromo usado para operacoes de voo.",
+        "type" : "label"
+      } ],
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Airport",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Airport or aerodrome used for flight operations.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Aeroporto",
+      "pt" : "Aeroporto"
+    },
+    "comment" : {
+      "pt" : "Classe inicial para representar aeroportos.",
+      "en" : "Seed class to represent airports."
+    },
+    "id" : "0"
+  }, {
+    "iri" : "http://airdata.org/ontology#DetalheInformacao",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "annotations" : {
+      "IAO_0000115" : [ {
+        "identifier" : "IAO_0000115",
+        "language" : "pt",
+        "value" : "Detalhe de informacao que descreve atributos e contexto de um dado.",
+        "type" : "label"
+      } ],
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Information Detail",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Information detail that describes data attributes and context.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DetalheInformacao",
+      "pt" : "Detalhe de informacao"
+    },
+    "comment" : {
+      "pt" : "Classe inicial para representar detalhes de informacao.",
+      "en" : "Seed class to represent information details."
+    },
+    "id" : "1"
+  } ]
+}

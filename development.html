@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia de Desenvolvimento - AirData Ontology</title>
+
+  <style>
+    /* Development Page Classic Styles */
+    .container {
+      max-width: 900px;
+      /* Largura de leitura clássica */
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2rem;
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 0.3em;
+      margin-bottom: 24px;
+      color: #24292e;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 0.3em;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      color: #24292e;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #24292e;
+    }
+
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul,
+    ol {
+      padding-left: 2em;
+      margin-bottom: 16px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      background-color: #f6f8fa;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 85%;
+    }
+
+    </style>
+
+  
+
+<style>
+
+</style>
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+
+<!-- AirData Footer Style Start -->
+<style>
+/* Footer Styles */
+.footer {
+  background-color: #f6f8fa;
+  border-top: 1px solid #d1d5da;
+  padding-top: 32px;
+  margin-top: 60px;
+  text-align: center;
+  color: #586069;
+  padding-bottom: 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 32px;
+}
+
+.footer-org {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #003C7D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background-color: #003C7D;
+  width: 100%;
+}
+</style>
+<!-- AirData Footer Style End -->
+
+</head>
+
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo (WebVOWL)</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="quality_report.html" class="dropdown-item">Relat&oacute;rio de Qualidade</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="development.html" class="nav-link">Desenvolvimento</a>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+<!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+  <!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+  
+
+  
+  <!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+  <!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+  <!-- 
+  Arquivo de cabeçalho canônico para o projeto AirData.
+  Use  como placeholder para o caminho relativo.
+  Exemplo: href="index.html"
+-->
+
+  <div class="container">
+
+    <h1>Guia de Desenvolvimento</h1>
+
+    <p>Orientações e referências para contribuidores da ontologia AirData.</p>
+
+    <h2>Padrões de Qualidade (ROBOT)</h2>
+    <p>Para garantir a consistência semântica e estrutural, todas as contribuições devem aderir aos seguintes critérios
+      obrigatórios:</p>
+
+    <ol>
+      <li><strong>Labels Únicos em Português:</strong> Use apenas um <code>rdfs:label</code> com a tag de idioma
+        <code>@pt-br</code> por classe. Traduções para o inglês devem ser movidas para a anotação
+        <code>skos:prefLabel</code>.
+      </li>
+      <li><strong>Definições Formais:</strong> Toda classe deve possuir uma definição em texto natural utilizando a
+        propriedade <code>iao:IAO_0000115</code> (também em português).</li>
+      <li><strong>Metadados da Ontologia:</strong> O cabeçalho da ontologia deve conter propriedades descritivas como
+        <code>dcterms:description</code> e informações de licença via <code>dcterms:license</code>.
+      </li>
+      <li><strong>Hierarquia Explícita:</strong> Classes de nível superior (sem superclasse lógica no domínio) devem
+        declarar explicitamente <code>rdfs:subClassOf owl:Thing</code>.</li>
+    </ol>
+
+    <h2>Ferramentas e Referências</h2>
+    <p>Abaixo estão listadas as especificações e ferramentas essenciais utilizadas no desenvolvimento da ontologia:</p>
+
+    <h3>Linguagem e Ferramentas</h3>
+    <ul>
+      <li><a href="https://www.w3.org/OWL/" target="_blank" rel="noopener">OWL (Web Ontology Language)</a>:
+        Especificação oficial do W3C para a linguagem de ontologias.</li>
+      <li><a href="https://robot.obolibrary.org/" target="_blank" rel="noopener">ROBOT</a>: Ferramenta de linha de
+        comando para automação de tarefas de ontologia, utilizada para validação e geração de relatórios de qualidade.
+      </li>
+    </ul>
+
+    <h3>Modelos de Referência (Domínio Aeronáutico)</h3>
+    <ul>
+      <li><a href="https://aixm.aero/" target="_blank" rel="noopener">AIXM (Aeronautical Information Exchange
+          Model)</a>: Referência principal para modelagem de dados de aviação. Disponível também a <a
+          href="https://aixm.aero/sites/default/files/imce/AIXM511HTML/index.html" target="_blank"
+          rel="noopener">documentação HTML da versão 5.1.1</a>.</li>
+      <li><a href="https://www.fixm.aero/" target="_blank" rel="noopener">FIXM (Flight Information Exchange Model)</a>:
+        Padrão global para intercâmbio de informações de voo.</li>
+      <li><a href="https://reference.swim.aero/" target="_blank" rel="noopener">SWIM (System Wide Information
+          Management)</a>: Referência de interoperabilidade.</li>
+    </ul>
+
+    <h3>Código Fonte</h3>
+    <ul>
+      <li><a href="https://github.com/ita-airdata/OntoSite" target="_blank" rel="noopener">Repositório GitHub</a>:
+        Acesso ao versionamento do projeto.</li>
+    </ul>
+
+  </div>
+
+  <!-- Footer -->
+  
+
+<!-- AirData Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-org"><strong>Instituto Tecnológico de Aeronáutica - ITA</strong></p>
+        <div class="footer-links">
+            <a href="https://www.airdata.ita.br" target="_blank">Portal AirData</a>
+            <a href="https://github.com/ita-airdata/OntoSite" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copyright">
+            © 2026 Projeto AirData - Todos os direitos reservados
+        </p>
+    </div>
+    <div class="footer-bottom-bar"></div>
+</footer>
+<!-- AirData Footer End -->
+
+</body>
+
+</html>

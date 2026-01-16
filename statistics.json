@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-01-16 20:07:00Z",
+  "owl_file": "airdata_owl_v0.2.0.owl",
+  "version": "desconhecida",
+  "modified_at": "2026-01-16",
+  "ontology_iri": "http://airdata.org/ontology#",
+  "consistency_check": "sim",
+  "owl_profile": "nao detectado",
+  "structure": {
+    "classes": 2,
+    "object_properties": 0,
+    "data_properties": 0,
+    "individuals": 0,
+    "axioms": 30,
+    "imports": []
+  },
+  "hierarchy": {
+    "max_depth": 2,
+    "avg_subclasses": 0.0,
+    "leaf_classes": 2,
+    "no_explicit_superclass": 0
+  },
+  "quality": {
+    "classes_no_label": 0,
+    "classes_no_comment": 0,
+    "properties_no_domain": 0,
+    "properties_no_range": 0
+  },
+  "evolution": {
+    "classes_added": 1,
+    "classes_removed": 0,
+    "object_properties_added": 0,
+    "object_properties_removed": 0,
+    "data_properties_added": 0,
+    "data_properties_removed": 0
+  },
+  "previous_version": "desconhecida"
+}

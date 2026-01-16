@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://airdata.org/ontology#"
+     xml:base="http://airdata.org/ontology"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://airdata.org/ontology#">
+        <owl:versionIRI rdf:resource="http://airdata.org/ontology/0.2.0"/>
+        <terms:creator xml:lang="en">AirData Team</terms:creator>
+        <terms:description xml:lang="en">Initial ontology for the AirData project with the Aeroporto class.</terms:description>
+        <terms:description xml:lang="pt">Ontologia inicial para o projeto AirData com a classe Aeroporto.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-16</terms:issued>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-16</terms:modified>
+        <terms:publisher xml:lang="en">AirData</terms:publisher>
+        <terms:title xml:lang="en">AirData Ontology - Airport</terms:title>
+        <terms:title xml:lang="pt">Ontologia AirData - Aeroporto</terms:title>
+        <rdfs:comment xml:lang="pt">Arquivo inicial com a classe Aeroporto.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Initial file with the Aeroporto class.</rdfs:comment>
+        <owl:versionInfo>0.2.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://airdata.org/ontology#Aeroporto -->
+
+
+    <owl:Class rdf:about="http://airdata.org/ontology#Aeroporto">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <obo:IAO_0000115 xml:lang="pt">Aeroporto ou aerodromo usado para operacoes de voo.</obo:IAO_0000115>
+        <rdfs:comment xml:lang="pt">Classe inicial para representar aeroportos.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Seed class to represent airports.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Aeroporto</rdfs:label>
+        <skos:definition xml:lang="en">Airport or aerodrome used for flight operations.</skos:definition>
+        <skos:prefLabel xml:lang="en">Airport</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://airdata.org/ontology#DetalheInformacao -->
+
+
+    <owl:Class rdf:about="http://airdata.org/ontology#DetalheInformacao">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <obo:IAO_0000115 xml:lang="pt">Detalhe de informacao que descreve atributos e contexto de um dado.</obo:IAO_0000115>
+        <rdfs:comment xml:lang="pt">Classe inicial para representar detalhes de informacao.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Seed class to represent information details.</rdfs:comment>
+        <rdfs:label xml:lang="pt">Detalhe de informacao</rdfs:label>
+        <skos:definition xml:lang="en">Information detail that describes data attributes and context.</skos:definition>
+        <skos:prefLabel xml:lang="en">Information Detail</skos:prefLabel>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

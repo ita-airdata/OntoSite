@@ -1,0 +1,95 @@
+<http://airdata.org/ontology#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://airdata.org/ontology#> <http://www.w3.org/2002/07/owl#versionIRI> <http://airdata.org/ontology/0.2.0> .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/creator> "AirData Team"@en .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/description> "Initial ontology for the AirData project with the Aeroporto class."@en .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/description> "Ontologia inicial para o projeto AirData com a classe Aeroporto."@pt .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/issued> "2026-01-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/modified> "2026-01-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/publisher> "AirData"@en .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/title> "AirData Ontology - Airport"@en .
+<http://airdata.org/ontology#> <http://purl.org/dc/terms/title> "Ontologia AirData - Aeroporto"@pt .
+<http://airdata.org/ontology#> <http://www.w3.org/2000/01/rdf-schema#comment> "Arquivo inicial com a classe Aeroporto."@pt .
+<http://airdata.org/ontology#> <http://www.w3.org/2000/01/rdf-schema#comment> "Initial file with the Aeroporto class."@en .
+<http://airdata.org/ontology#> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://airdata.org/ontology#Aeroporto
+<http://airdata.org/ontology#Aeroporto> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Aeroporto> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://airdata.org/ontology#Aeroporto> <http://purl.obolibrary.org/obo/IAO_0000115> "Aeroporto ou aerodromo usado para operacoes de voo."@pt .
+<http://airdata.org/ontology#Aeroporto> <http://www.w3.org/2000/01/rdf-schema#comment> "Classe inicial para representar aeroportos."@pt .
+<http://airdata.org/ontology#Aeroporto> <http://www.w3.org/2000/01/rdf-schema#comment> "Seed class to represent airports."@en .
+<http://airdata.org/ontology#Aeroporto> <http://www.w3.org/2000/01/rdf-schema#label> "Aeroporto"@pt .
+<http://airdata.org/ontology#Aeroporto> <http://www.w3.org/2004/02/skos/core#definition> "Airport or aerodrome used for flight operations."@en .
+<http://airdata.org/ontology#Aeroporto> <http://www.w3.org/2004/02/skos/core#prefLabel> "Airport"@en .
+# 
+# http://airdata.org/ontology#DetalheInformacao
+<http://airdata.org/ontology#DetalheInformacao> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#DetalheInformacao> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://airdata.org/ontology#DetalheInformacao> <http://purl.obolibrary.org/obo/IAO_0000115> "Detalhe de informacao que descreve atributos e contexto de um dado."@pt .
+<http://airdata.org/ontology#DetalheInformacao> <http://www.w3.org/2000/01/rdf-schema#comment> "Classe inicial para representar detalhes de informacao."@pt .
+<http://airdata.org/ontology#DetalheInformacao> <http://www.w3.org/2000/01/rdf-schema#comment> "Seed class to represent information details."@en .
+<http://airdata.org/ontology#DetalheInformacao> <http://www.w3.org/2000/01/rdf-schema#label> "Detalhe de informacao"@pt .
+<http://airdata.org/ontology#DetalheInformacao> <http://www.w3.org/2004/02/skos/core#definition> "Information detail that describes data attributes and context."@en .
+<http://airdata.org/ontology#DetalheInformacao> <http://www.w3.org/2004/02/skos/core#prefLabel> "Information Detail"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
